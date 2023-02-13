@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Express Live Map</title>
+	<style type="text/css">
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			margin: 0;
+			text-align: center;
+			font-family: Roboto;
+			font-size: 30px;
+			min-width: 100%;
+			min-height: 100%;
+			vertical-align: middle;
+			text-decoration: none;
+			color: white;
+		}
+
+		html {
+			background: url(images/background.png) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			min-height: 100%;
+		}
+
+		#logo {
+			max-width: 90%;
+			margin: 10px;
+			max-height: -1%;
+		}
+
+		#hide {
+			display: inline;
+			opacity: 0.6;
+		}
+
+		#alert {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-image: url("/images/st.png");
+			padding-top: 10%;
+			text-align: center;
+			opacity: 0;
+			transition: opacity 1s;
+			z-index: -1;
+		}
+
+		#alert i {
+			float: right;
+		}
+
+		#alert div {
+			background-color: white;
+			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+			margin-left: 9%;
+			margin-right: 10%;
+			max-width: 500px;
+			width: 80%;
+			display: inline-block;
+			color: black;
+			text-align: left;
+			padding: 10px;
+			font-size: 13pt;
+		}
+
+		.material-icons {
+			cursor: pointer;
+		}
+
+		.options {
+			background-color: rgb(28 28 28 / 80%);
+			padding: 30px;
+			min-width: 20%;
+			border-radius: 10px;
+		}
+
+		.options a img {
+			width: 100%;
+		}
+	</style>
+	<link rel="icon" sizes="192x192" href="images/favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<meta name="theme-color" content="#2190E3">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body>
+	<br>
+	<h1><img src="images/banner.png" width="400"></h1>
+	<div class="options">
+		<br>Select a map<br> <br>
+		<div style="max-width: 350px; z-index: 10; display: flex; flex-direction: column; justify-content: center;">
+			<a href="ets2"><img src="images/ets2logo.png"></a><br>
+			<a href="ats"><img src="images/atslogo.png"></a><br>
+			<!-- <a href="promods"><img src="images/promodslogo.jpg" ><br>ETS2 Promods</a> -->
+		</div>
+	</div>
+	<div id="alert">
+		<div>
+			<t style="font-size:18pt;">Map is not available</t>
+			<i class="material-icons" onclick="clearAlert()">&#xE14C;</i><br><br>
+			Description of the problem
+		</div>
+	</div>
+	<script type="text/javascript">
+		function putAlert() {
+			document.getElementById("alert").style.opacity = 1;
+			document.getElementById("alert").style.zIndex = 10;
+		}
+		function clearAlert() {
+			document.getElementById("alert").style.opacity = 0;
+			document.getElementById("alert").style.zIndex = -10;
+		}
+	</script>
+</body>
+
+</html>
